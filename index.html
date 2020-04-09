@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>
+            vuejs
+        </title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <h1 v-once>{{ title }}</h1>
+            <p>{{ changeTitle() }}</p>
+            <p v-html="link">Google</p>
+            <p v-html="finishedLink"></p>
+        </div>
+        <script>
+            new Vue({
+                el: "#app",
+                data: {
+                    title: 'helloworld',
+                    link: '<a href="https://www.google.co.in/">Google</a>',
+                    finishedLink: '<a href="https://www.google.co.in/">Google</a>'
+                },
+                methods: {
+                    changeTitle: function() {
+                        this.title = 'hello';
+                        return this.title;
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
